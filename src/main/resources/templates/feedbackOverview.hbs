@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APPsist</title>
+  <meta name="description" content="APPsist">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/fontawesome-stars-o.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/javascript" src="../js/jquery-3.1.1.min.js"></script>
+  <script type="application/javascript" src="../js/jquery.barrating.min.js"></script>
+  <script type="application/javascript" src="../js/overview.js"></script>
+  <script type="application/javascript">
+    $(document).ready(function() {
+      UFS.init('{{selectedProcess.id}}'{{#if rating}}, {{rating.average}}{{/if}});
+    });
+  </script>
+</head>
+
+<body>
+  {{#if selectedProcess}}
+  <div class="header">
+    Bewertungen für &quot;{{selectedProcess.title}}&quot;
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label for="processSelect">Anleitung auswählen</label>
+      <select id="processSelect" value="{{selectedProcess.id}}">
+        {{#each processes}}
+        <option value="{{this.id}}">{{this.title}} ({{this.id}})</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="panel">
+    {{#if rating}}
+    <div class="field">
+      <label>Durchschnittliche Bewertung ({{rating.numTotal}} Bewertungen insgesamt)</label>
+      <select id="totalRating" name="totalRating">
+        <option />
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    {{else}}
+    <div class="field">
+      <label>Es liegen keine Bewertungen vor.</label>
+    </div>
+    {{/if}}
+
+    {{#if contentFlaws}}
+    <div class="field">
+      <label>Fachliche Mängel ({{contentFlaws.numTotal}} Meldungen, {{contentFlaws.numDetails}} mit Kommentar)</label>
+      {{#if contentFlaws.details}}
+      <ul class="feedbackList">
+        {{#each contentFlaws.details}}
+        <li data-id="{{this.id}}">{{this.text}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{else}}
+    <div class="field">
+      <label>Es wurden keine fachlichen Mängel angemerkt.</label>
+    </div>
+    {{/if}}
+
+    {{#if technicalFlaws}}
+    <div class="field">
+      <label>Technische Probleme ({{technicalFlaws.numTotal}} Meldungen, {{technicalFlaws.numDetails}} mit Kommentar)</label>
+      {{#if technicalFlaws.details}}
+      <ul class="feedbackList">
+        {{#each technicalFlaws.details}}
+        <li data-id="{{this.id}}">{{this.text}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{else}}
+    <div class="field">
+      <label>Es wurden keine technischen Probleme gemeldet.</label>
+    </div>
+    {{/if}}
+
+    {{#if miscFeedback}}
+    <div class="field">
+      <label>Anmerkungen</label>
+      <ul class="feedbackList">
+        {{#each miscFeedback.items}}
+        <li data-id="{{this.id}}">{{this.text}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{else}}
+    <div class="field">
+      <label>Es liegen keine sonstigen Anmerkungen vor.</label>
+    </div>
+    {{/if}}
+  </div>
+  <div class="buttonBar">
+    <button onclick="UFS.clear();">Feedback zurücksetzen</button>
+  </div>
+  {{else}}
+  <div class="header">
+    Bewertungen anzeigen
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label for="processSelect">Anleitung auswählen</label>
+      <select id="processSelect">
+        <option disabled selected value>-</option>
+        {{#each processes}}
+        <option value="{{this.id}}">{{this.title}} ({{this.id}})</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  {{/if}}
+</body>
+
+</html>

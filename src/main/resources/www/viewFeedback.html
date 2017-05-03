@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APPsist</title>
+  <meta name="description" content="APPsist User Profile">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/fontawesome-stars-o.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/css-stars-small.css">
+  <script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="application/javascript" src="js/jquery.barrating.min.js"></script>
+  <script type="application/javascript" src="js/viewFeedback.js"></script>
+  <script type="application/javascript">
+    $(document).ready(function() {
+      UFS.init('feedback123', 'id1234');
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    Bewertung
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label>Durchgeführte Anleitung</label>
+      <div class="info">Prozess 1 (id1234) am 12.12.2016 17:00 Uhr</div>
+    </div>
+    <div class="field">
+      <label>Benutzer</label>
+      <div class="info">fritz.tonker@festo.de</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label>Bewertung</label>
+      <select id="totalRating" name="totalRating">
+        <option />
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label>Es wurden fachliche Mängel angemerkt ohne Details zu nennen.</label>
+    </div>
+    <div class="field">
+      <label>Es wurden technische Probleme gemeldet. Details:</label>
+      <textarea readonly="readonly">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</textarea>
+    </div>
+    <div class="field">
+      <label>Sonstige Anmerkungen</label>
+      <textarea readonly="readonly">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</textarea>
+    </div>
+  </div>
+  <div class="buttonBar">
+    <button onclick="UFS.back();">Zurück</button>
+    <button onclick="UFS.delete();">Löschen</button>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+	"main" : "de.appsist.service.ufs.MainVerticle",
+
+	"description" : "APPsist User Feedback Service",
+	"licenses" : ["The Apache Software License Version 2.0"],
+	"author" : "Simon Schwantzer",
+
+	"keywords": ["appsist", "service", "feedback", "rating"],
+	"homepage": "http://www.appsist.de/",
+
+	"auto-redeploy": true
+}

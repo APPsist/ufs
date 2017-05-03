@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APPsist</title>
+  <meta name="description" content="APPsist User Profile">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/fontawesome-stars-o.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/css-stars-small.css">
+  <script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="application/javascript" src="js/jquery.barrating.min.js"></script>
+  <script type="application/javascript" src="js/overview.js"></script>
+  <script type="application/javascript">
+    $(document).ready(function() {
+      UFS.init('id1234', 3.5);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    Bewertung von Prozess 1
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label for="processSelect">Anleitung auswählen</label>
+      <select id="processSelect">
+        <option value="id1234">Prozess 1 (id1234)</option>
+        <option value="id5678">Prozess 2 (id5678)</option>
+      </select>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="field">
+      <label>Durchschnittliche Bewertung (6 Bewertungen insgesamt)</label>
+      <select id="totalRating" name="totalRating">
+        <option />
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Fachliche Mängel (3 Meldungen, 3 mit Kommentar)</label>
+      <ul class="feedbackList">
+        <li data-id="feedback1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+        <li data-id="feedback2">At vero eos et accusam et justo duo dolores et ea rebum.</li>
+        <li data-id="feedback3">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</li>
+      </ul>
+    </div>
+    <div class="field">
+      <label>Technische Probleme (6 Meldungen, 3 mit Kommentar)</label>
+      <ul class="feedbackList">
+        <li data-id="feedback1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+        <li data-id="feedback2">At vero eos et accusam et justo duo dolores et ea rebum.</li>
+        <li data-id="feedback3">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</li>
+      </ul>
+    </div>
+    <div class="field">
+      <label>Anmerkungen</label>
+      <ul class="feedbackList">
+        <li data-id="feedback1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+        <li data-id="feedback2">At vero eos et accusam et justo duo dolores et ea rebum.</li>
+        <li data-id="feedback3">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="buttonBar">
+    <button id="deleteFeedbackForGuide">Feedback zurücksetzen</button>
+  </div>
+</body>
+
+</html>

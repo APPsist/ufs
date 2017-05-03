@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>APPsist</title>
+  <meta name="description" content="APPsist User Profile">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/css-stars-big.css">
+  <script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="application/javascript" src="js/jquery.barrating.min.js"></script>
+  <script type="application/javascript" src="js/feedback.js"></script>
+  <script type="application/javascript">
+    $(document).ready(function() {
+      UFS.init();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    Bewertung
+  </div>
+  <form method="post" action="postFeedback" enctype="multipart/form-data">
+    <input type="hidden" name="sid" value="{{sid}}">
+    <input type="hidden" name="uid" value="{{uid}}">
+    <input type="hidden" name="pid" value="{{pid}}">
+
+    <div class="panel">
+      <div class="field">
+        <div class="info">Wie ist Ihr Gesamteindruck von dieser Anleitung?</div>
+        <select id="totalRating" name="totalRating">
+          <option />
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <input type="checkbox" name="contentFlaw" id="contentFlaw" value="true"><span>Mir sind fachliche Mängel aufgefallen.</span><br>
+      </div>
+      <div id="contentFlawDetailsField" class="field hidden">
+        <label for="contentFlawDetails">Details</label>
+        <textarea id="contentFlawDetails" name="contentFlawDetails"></textarea>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <input type="checkbox" name="technicalFlaw" id="technicalFlaw" value="true"><span>Es gab technische Probleme.</span>
+      </div>
+      <div id="technicalFlawDetailsField" class="field hidden">
+        <label for="technicalFlawDetails">Details</label>
+        <textarea id="technicalFlawDetails" name="technicalFlawDetails"></textarea>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <input type="checkbox" name="miscFeedback" id="miscFeedback" value="true"><span>Ich habe sonstiges Feedback.</span>
+      </div>
+      <div id="miscFeedbackDetailsField" class="field hidden">
+        <label for="miscFeedbackDetails">Details</label>
+        <textarea name="miscFeedbackDetails" id="miscFeedbackDetails"></textarea>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="field">
+        <input type="checkbox" name="addUserId" id="addUserId" value="true"><div class="note">Die Bewertung darf mit meinem Benutzer verknüpft werden, damit ich bei Rückfragen kontaktiert werden kann.<br>Diese Angabe ist freiwillig!</div>
+      </div>
+    </div>
+    <div class="buttonBar">
+      <button id="submit">Bewertung senden</button>
+    </div>
+    <div class="message-panel" id="message"></div>
+  </form>
+</body>
+
+</html>

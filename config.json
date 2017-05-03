@@ -1,0 +1,16 @@
+{
+	"webserver" : {
+		"port" : 8099,
+		"basePath" : "/services/ufs"
+	},
+	"mongoPersistorAddress" : "vertx.mongopersistor",
+	"services" : {
+		"host" : "localhost",
+		"port" : 8080,
+		"secure" : false,
+		"paths" : {
+			"pki" : "/services/pki"
+		}
+	}
+	"debugMode" : true
+}
